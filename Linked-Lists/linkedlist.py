@@ -7,11 +7,10 @@ class Node(object):
         self.data = data 
         self.next = None 
 
-class SinglyLinedList(object): 
+class SinglyLinkedList(object): 
     def __init__(self): 
         self.head = None 
         self.size = 0 
-        #points to Node 
         self.cursor = None 
 
 
@@ -22,26 +21,36 @@ class SinglyLinedList(object):
         if self.cursor is None: 
             raise Exception
         else: 
-            ret_node = self.cursor.data 
+            ret_node = self.cursor
             self.cursor. self.cursor.next 
             return ret_node 
 
 
     def add_node(self, data): 
-        '''
-            add node to beginning of the list 
-        '''
-        #empty list
         if self.head is None: 
             self.head = Node(data) 
             self.cursor = self.head 
         else: 
             node = Node(data)  
             node.next = self.head 
-            self.cursor = node 
             self.head = node 
 
         self.size += 1
 
-    def delete_node(self, data): 
-        pass 
+    def delete_node(self, data):  
+        pass
+
+    def contains(self, to_find):
+        if self.head is not None: 
+            curr = self.head 
+            while curr is not None: 
+                if curr.data is to_find: 
+                    return True
+                curr = curr.next 
+        return False
+
+if __name__ == '__main__': 
+    test_list = SinglyLinkedList()
+    test_list.add_node(1)
+    test_list.add_node(2)
+    test_list.add_node(3)
