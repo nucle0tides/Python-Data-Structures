@@ -6,13 +6,13 @@ class Node(object):
     def __init__(self, data): 
         self.data = data 
         self.next = None 
+        self.previous = None
 
 class SinglyLinkedList(object): 
     def __init__(self): 
         self.head = None 
         self.size = 0 
         self.cursor = None 
-
 
     def size(self): 
         return self.size 
@@ -48,6 +48,10 @@ class SinglyLinkedList(object):
                     return True
                 curr = curr.next 
         return False
+
+class DoublyLinkedList(SinglyLinkedList): 
+    def __init__(self):
+        pass 
 
 if __name__ == '__main__': 
     test_list = SinglyLinkedList()
